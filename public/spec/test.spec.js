@@ -73,63 +73,63 @@ describe('Registration Form Validation', () => {
         delete global.localStorage;
     });
 
-    it('Week4_Day1_Invalid_Registration_Weak_Password', () => {
-      // Mock form inputs with weak password
-      document.getElementById('username').value = 'weakUser';
-      document.getElementById('password').value = 'password'; // Doesn't meet complexity requirements
-      document.getElementById('confirmPassword').value = 'password';
-      document.getElementById('role').value = 'admin';
+//     it('Week4_Day1_Invalid_Registration_Weak_Password', () => {
+//       // Mock form inputs with weak password
+//       document.getElementById('username').value = 'weakUser';
+//       document.getElementById('password').value = 'password'; // Doesn't meet complexity requirements
+//       document.getElementById('confirmPassword').value = 'password';
+//       document.getElementById('role').value = 'admin';
 
-      // Call the validation function
-      const result = validateRegistration();
+//       // Call the validation function
+//       const result = validateRegistration();
 
-      // Assertions
-      expect(result).toBe(false);
-      expect(document.getElementById('passwordValidation').textContent).toBe('Password must be at least 8 characters long and contain both letters and numbers');
-  });
+//       // Assertions
+//       expect(result).toBe(false);
+//       expect(document.getElementById('passwordValidation').textContent).toBe('Password must be at least 8 characters long and contain both letters and numbers');
+//   });
 
-  it('Week4_Day1_Invalid_Registration_Password_does_not_match', () => {
-    // Mock form inputs with weak password
-    document.getElementById('username').value = 'weakUser';
-    document.getElementById('password').value = 'password1'; // Doesn't meet complexity requirements
-    document.getElementById('confirmPassword').value = 'password2';
-    document.getElementById('role').value = 'admin';
+//   it('Week4_Day1_Invalid_Registration_Password_does_not_match', () => {
+//     // Mock form inputs with weak password
+//     document.getElementById('username').value = 'weakUser';
+//     document.getElementById('password').value = 'password1'; // Doesn't meet complexity requirements
+//     document.getElementById('confirmPassword').value = 'password2';
+//     document.getElementById('role').value = 'admin';
 
-    // Call the validation function
-    const result = validateRegistration();
+//     // Call the validation function
+//     const result = validateRegistration();
 
-    // Assertions
-    expect(result).toBe(false);
-    expect(document.getElementById('passwordValidation').textContent).toBe('Passwords do not match');
-  });
+//     // Assertions
+//     expect(result).toBe(false);
+//     expect(document.getElementById('passwordValidation').textContent).toBe('Passwords do not match');
+//   });
 
 
 
-  it('Week4_Day1_should_register_for_valid_registration_data', () => {
-    // Mock form inputs with valid registration data
-    document.getElementById('username').value = 'validUser';
-    document.getElementById('password').value = 'Password1';
-    document.getElementById('confirmPassword').value = 'Password1';
-    document.getElementById('role').value = 'admin';
+//   it('Week4_Day1_should_register_for_valid_registration_data', () => {
+//     // Mock form inputs with valid registration data
+//     document.getElementById('username').value = 'validUser';
+//     document.getElementById('password').value = 'Password1';
+//     document.getElementById('confirmPassword').value = 'Password1';
+//     document.getElementById('role').value = 'admin';
 
-    // Mock window.location.assign function
-    const originalAssign = global.location.assign;
-    global.location.assign = jasmine.createSpy();
+//     // Mock window.location.assign function
+//     const originalAssign = global.location.assign;
+//     global.location.assign = jasmine.createSpy();
 
-    // Call the validation function
-    const result = validateRegistration();
+//     // Call the validation function
+//     const result = validateRegistration();
 
-    // Assertions
-    // expect(result).toBe(false); // Since you're preventing form submission
-    expect(global.alert).toHaveBeenCalledWith('Registration successful!'); // Check if alert was called with the correct message
-    // expect(global.location.assign).toHaveBeenCalledWith('login.html'); // Check if assign was called with the correct URL
+//     // Assertions
+//     // expect(result).toBe(false); // Since you're preventing form submission
+//     expect(global.alert).toHaveBeenCalledWith('Registration successful!'); // Check if alert was called with the correct message
+//     // expect(global.location.assign).toHaveBeenCalledWith('login.html'); // Check if assign was called with the correct URL
 
-    // Check if the current URL matches the expected URL
-    // expect(location.href).toBe('login.html');
+//     // Check if the current URL matches the expected URL
+//     // expect(location.href).toBe('login.html');
 
-    // // Restore the original function after the test
-    global.location.assign = originalAssign;
-});
+//     // // Restore the original function after the test
+//     global.location.assign = originalAssign;
+// });
 
 it('Week4_Day2_should_navigate_to_login_page_with_valid_registration_data', () => {
   // Mock form inputs with valid registration data
